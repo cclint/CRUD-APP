@@ -1,9 +1,19 @@
 # app/home/views.py
 
 from flask import render_template
-from flask_login import login_required
+from flask_login import current_user, login_required
 
 from . import home
+
+
+@home.route('admin/dashboard')
+@login_required
+def amdin_dashboard():
+    # prevent non-admins from accessing the page
+    if not current_user.is_admin:
+        abort(403)
+
+    return render_template('home/admin_dashboard', title="Dashboard")
 
 @home.route('/')
 def homepage():
