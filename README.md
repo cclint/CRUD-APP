@@ -1,2 +1,2 @@
 # Research-Computing
-Just a collection of scratch work from my internship at UAB Research Computing.
+A simple employee management web application, with a touch of Star Wars. 
